@@ -1,29 +1,29 @@
 Please Enter The Title of Your Repository
-$[title]
+${response.Title}
 
 Please Enter the Description of Your Repository
-$[description]
+${response.Description}
 
 Please list a table of contents
-$[Contents]
+${response.Contents}
 
 How do you install this program
-$[Installation]
+${response.Installation}
 
 Please enter a license if any
-$[License]
+${response.License}
 
 Please list any contributors
-$[Contributors]
+${response.Contributors}
 
 Do you hava a test for this application?
-$[Tests]
+${response.Tests}
 
 Do you have any questions?
-$[Questions]
+${response.Questions}
 
 What is your github username?
-$[Github]
+${response.Github}
 
 
 

@@ -1,9 +1,15 @@
+// // PLEASE NOTE TO TA'S. Anything in green is what I tried to get my answers to my 
+// application to write to my index.md file.  I did talk to Zac and I tried to get it to work 
+// for my application but I couldn't so I'm submitting what I have .
 
+const fs=require("fs");
 const inquirer = require('inquirer');
-const create = require ("./createReadme");
+const util = require("util");
+const writeFileAsync=util.promisify(fs.writeFile);
 
 
-function getUserInput() {
+
+ function getUserInput() {
 	return inquirer.prompt([
 		{
 			type: "input",
@@ -55,13 +61,52 @@ function getUserInput() {
 	])
 }
 
+// function generateMD(response){ 
+//     return 
+// " Please Enter The Title of Your Repository"
+// ${response.Title}
 
+// "Please Enter the Description of Your Repository"
+// ${response.Description}
+
+// "Please list a table of contents"
+// ${response.Contents}
+
+// "How do you install this program"
+// ${response.Installation}
+
+// "Please enter a license if any"
+// ${response.License}
+
+// "Please list any contributors"
+// ${response.Contributors}
+
+// "Do you hava a test for this application?"
+// ${response.Tests}
+
+// "Do you have any questions?"
+// ${response.Questions}
+
+// "What is your github username?"
+// ${response.Github}
+// 
 
 async function main() {
-	const { username } = await getUserInput();
-
+    const {response} = await getUserInput();
 }
+//      .then(function(response)
+//     {
+//         const md=generateMD(response);
+//         return writeFileAsync("index.md", md);
 
-main();
+//     })
+//     .then(function(){
+//         console.log("Successfully wrote to index.md")
+//     })
+//     .catch (function (err){
+//         console.log(err);
+//     });
 
+
+ main();
 
