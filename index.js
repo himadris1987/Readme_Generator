@@ -14,12 +14,12 @@ const writeFileAsync=util.promisify(fs.writeFile);
 		{
 			type: "input",
 			message: "Please enter the title of your repository",
-			name: "title",
+			name: "Title",
         },
         {
             type: "input",
             message:"Please enter the description of your Repository",
-            name:"description"
+            name:"Description"
         },
         {
             type: "input",
@@ -61,52 +61,53 @@ const writeFileAsync=util.promisify(fs.writeFile);
 	])
 }
 
-// function generateMD(response){ 
-//     return 
-// " Please Enter The Title of Your Repository"
-// ${response.Title}
+function generateMD(response){ 
+    return `
+#Please Enter The Title of Your Repository
+${response.Title}
 
-// "Please Enter the Description of Your Repository"
-// ${response.Description}
+##Please Enter the Description of Your Repository
+${response.Description}
 
-// "Please list a table of contents"
-// ${response.Contents}
+##Please list a table of contents
+${response.Contents}
 
-// "How do you install this program"
-// ${response.Installation}
+##How do you install this program
+${response.Installation}
 
-// "Please enter a license if any"
-// ${response.License}
+##Please enter a license if any
+${response.License}
 
-// "Please list any contributors"
-// ${response.Contributors}
+##Please list any contributors
+${response.Contributors}
 
-// "Do you hava a test for this application?"
-// ${response.Tests}
+##Do you hava a test for this application?
+${response.Tests}
 
-// "Do you have any questions?"
-// ${response.Questions}
+##Do you have any questions?
+${response.Questions}
 
-// "What is your github username?"
-// ${response.Github}
-// 
+##What is your github username?
+${response.Github} `
+;
+}
 
 async function main() {
-    const {response} = await getUserInput();
+    const {response} = await getUserInput()
+
+     .then(function(response)
+    {
+        const md=generateMD(response);
+        return writeFileAsync("index.md", md);
+
+    })
+    .then(function(){
+        console.log("Successfully wrote to index.md")
+    })
+    .catch (function (err){
+        console.log(err);
+    });
 }
-//      .then(function(response)
-//     {
-//         const md=generateMD(response);
-//         return writeFileAsync("index.md", md);
-
-//     })
-//     .then(function(){
-//         console.log("Successfully wrote to index.md")
-//     })
-//     .catch (function (err){
-//         console.log(err);
-//     });
-
 
  main();
 

@@ -1,29 +1,27 @@
-Please Enter The Title of Your Repository
-${response.Title}
 
-Please Enter the Description of Your Repository
-${response.Description}
+#Please Enter The Title of Your Repository
+Readme Generator
 
-Please list a table of contents
-${response.Contents}
+##Please Enter the Description of Your Repository
+This application creates a readme from a series of questions
 
-How do you install this program
-${response.Installation}
+##Please list a table of contents
+None
 
-Please enter a license if any
-${response.License}
+##How do you install this program
+Run node and then do npm i Readme_Generator
 
-Please list any contributors
-${response.Contributors}
+##Please enter a license if any
+None
 
-Do you hava a test for this application?
-${response.Tests}
+##Please list any contributors
+Zac Warner helped me clean up the code.  Youtube also helped
 
-Do you have any questions?
-${response.Questions}
+##Do you hava a test for this application?
+No
 
-What is your github username?
-${response.Github}
+##Do you have any questions?
+None
 
-
-
+##What is your github username?
+himadris1987 
